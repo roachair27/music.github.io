@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magasin de Musique</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #c0b38a;
+        }
+
+        header {
+            background-color: #6b1616;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        .produit {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            background-color: white;
+            text-align: center;
+        }
+
+        .produit img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            background-color: #6b1616;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Magasin de Musique</h1>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#produits">Produits</a></li>
+                <li><a href="#inscription">Inscription</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="accueil">
+            <h2>Bienvenue</h2>
+            <p>Découvrez notre sélection de matériel de musique.</p>
+            <p>Crée par <b>ROA CHAIR</b> et <b>CEDRIC NGOUOU MEKOUONTCHOU .</b></p>
+        </section>
+        <section id="produits">
+            <h2>Nos Produits</h2>
+            <div class="produit" id="produit1">
+                <img src="C:/Users/HP/Desktop/pic/guitar.jpg" alt="Guitare">
+                <h3>Guitare</h3>
+                <p>Prix: 200€</p>
+                <button onclick="ajouterPanier('Guitare', 200)">Ajouter au panier</button>
+            </div>
+            <div class="produit" id="produit2">
+                <img src="C:/Users/HP/Desktop/pic/piano.jpg" alt="Piano">
+                <h3>Piano</h3>
+                <p>Prix: 1000€</p>
+                <button onclick="ajouterPanier('Piano', 1000)">Ajouter au panier</button>
+            </div>
+            <!-- Ajoutez plus de produits ici -->
+        </section>
+        <section id="inscription">
+            <h2>Créer un compte</h2>
+            <form id="form-inscription" onsubmit="inscrireUtilisateur(event)">
+                <label for="username">Nom d'utilisateur :</label>
+                <input type="text" id="username" name="username" required><br><br>
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" required><br><br>
+                <button type="submit">S'inscrire</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+
+        <p>Contactez-nous à contact@musique.com</p>
+    </footer>
+    <script>
+        function ajouterPanier(produit, prix) {
+            alert(produit + " a été ajouté au panier pour " + prix + "€.");
+            // Vous pouvez ajouter du code pour gérer le panier ici
+        }
+
+        function inscrireUtilisateur(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username && password) {
+                alert('Inscription réussie pour ' + username);
+                // Ici, vous pouvez envoyer les données à un serveur backend si disponible
+            } else {
+                alert('Veuillez remplir tous les champs');
+            }
+        }
+    </script>
+</body>
+</html>
